@@ -1,30 +1,47 @@
-document.addEventListener("DOMContentLoaded", () => {
 
-    const userimg = document.getElementById("user-img");
-    const username = document.getElementById("user-name");
-    const useremail = document.getElementById("user-email");
-    const userbirthday = document.getElementById("user-birthday");
-    const useraddress = document.getElementById("user-address");
-    const userphone = document.getElementById("user-phone");
-    const userpassword = document.getElementById("user-password");
+document.addEventListener("DOMContentLoaded", generateUser);
 
-    function fetchUserData() {
-        fetch('https://randomuser.me/api/')
-            .then(response => response.json())
-            .then(data => {
-                const user = data.results[0];
-                userimg.src = user.picture.large;
-                username.textContent = `${user.name.first} ${user.name.last}`;
-                useremail.textContent = user.email;
-                useraddress.textContent = `${user.location.city}, ${user.location.country}`;
-                userbirthday.textContent = new Date(user.dob.date).toLocaleDateString();
-                useraddress.textContent = `${user.location.street.number} ${user.location.street.name}, ${user.location.city}, ${user.location.country}`;
-                userphone.textContent = user.phone;
-                userpassword.textContent = user.login.password;
-            })
-            .catch(error => console.error('Error fetching user data:', error));
-    }
+function generateUser() {
+    fetch("https://randomuser.me/api/")
+        .then(response => response.json())
+        .then(data => {
+            const user = data.results[0];
+            document.getElementById("user-img").src = user.picture.large;
+            document.getElementById("name").innerText =` ${user.name.first} ${user.name.last}`;
+            document.getElementById("email").innerText = user.email;
+            document.getElementById("location").innerText = `${user.location.city}, ${user.location.country}`;
+            document.getElementById("birthday").innerText = new Date(user.dob.date).toLocaleDateString();
+            document.getElementById("phone").innerText = ` ${user.phone}`;
 
-    fetchUserData();
+            document.getElementById("user-container").style.display = "block";
+        })
+        .catch((error) => {
+            console.error("Error fetching user:", error);
+        });
+    const iconName = document.getElementById('icon-name');
+    const iconEmail = document.getElementById('icon-email');
+    const iconLocation = document.getElementById('icon-location');
+    const iconBirthday = document.getElementById('icon-birthday');
+    const iconPhone = document.getElementById('icon-phone');
+    const iconPassword = document.getElementById('icon-password');
+    const hoverData = document.getElementById('hover-data');   
+    iconName.addEventListener('mouseover',()=>{
+        hoverData.innerText=documnet.getElementById('name').innerText;
+    });
+    
+    iconName.addEventListener('mouseover',()=>{
+        hoverData.innerText=documnet.getElementById('email').innerText;
+    });
 
-});
+    iconName.addEventListener('mouseover',()=>{
+        hoverData.innerText=documnet.getElementById('location').innerText;
+    });
+
+    iconName.addEventListener('mouseover',()=>{
+        hoverData.innerText=documnet.getElementById('birthday').innerText;
+    });
+
+    iconName.addEventListener('mouseover',()=>{
+        hoverData.innerText=documnet.getElementById('password').innerText;
+    });
+}
