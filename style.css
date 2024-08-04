@@ -32,25 +32,67 @@ header {
 .navbar a:hover {
     background-color: #555;
 }
+button {
+    background-color: #44b712;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #06427f;
+}
+
+footer {
+    background-color: #eee;
+    padding: 100px;
+    margin-top: 100px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    left: 50px;
+    height: 30px;
+}
+.container{
+    max-width: 900px;
+    margin: 150px;
+    height: 25h;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 350px;
+    right: 0;
+    top: 532px;
+    width: 840px;
+}
+
+
 
 .Generator{
     text-align: center;
     padding: 2rem 1rem;
-    background-color: #000;
-    color: #fff;
+    background-color: #000000;
+    color: rgb(255, 240, 240);
     margin: 0 auto;
     height: 350px;
     width: 95%;
     font-size: 20px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
 
 .user-profile {
     margin: 2rem auto;
     background-color: #d3d0d0;
-    width: 60%;
-    color: #000;
-    height: 500px;
+    width: 50%;
+    color: #110e0e;
+    height: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -80,10 +122,27 @@ h1 {
 
 .icon {
     font-size: 40px;
-    color: #ada3a3;
+    color: #210101;
     transition: color 0.3s;
 }
 
-.icon:hover {
-    color: #555;
+.icon:hover{
+    background-color: #4ca725;
+
+}
+h3{
+    text-align: center;
+    color: #000;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+h2{
+    text-align: center;
+    color:rgb(26, 19, 19);
+}
+
+#learn-more-btn{
+   height: 120px;
+   width: 170px;
+   font-family:  Arial, sans-serif;
+   top: 30px;
 }
