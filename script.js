@@ -24,23 +24,4 @@ function generateUser() {
     const iconPhone = document.getElementById('icon-phone');
     const iconPassword = document.getElementById('icon-password');
     const hoverData = document.getElementById('hover-data');   
-    iconName.addEventListener('mouseover',()=>{
-        hoverData.innerText=documnet.getElementById('name').innerText;
-    });
-    
-    iconName.addEventListener('mouseover',()=>{
-        hoverData.innerText=documnet.getElementById('email').innerText;
-    });
-
-    iconName.addEventListener('mouseover',()=>{
-        hoverData.innerText=documnet.getElementById('location').innerText;
-    });
-
-    iconName.addEventListener('mouseover',()=>{
-        hoverData.innerText=documnet.getElementById('birthday').innerText;
-    });
-
-    iconName.addEventListener('mouseover',()=>{
-        hoverData.innerText=documnet.getElementById('password').innerText;
-    });
-}
+    }
