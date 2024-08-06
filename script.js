@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", generateUser);
 
 function generateUser() {
@@ -9,7 +8,7 @@ function generateUser() {
             document.getElementById("user-img").src = user.picture.large;
             document.getElementById("name").innerText =` ${user.name.first} ${user.name.last}`;
             document.getElementById("email").innerText = user.email;
-            document.getElementById("location").innerText = `${user.location.city}, ${user.location.country}`;
+            document.getElementById("location").innerText =` ${user.location.city}, ${user.location.country}`;
             document.getElementById("birthday").innerText = new Date(user.dob.date).toLocaleDateString();
             document.getElementById("phone").innerText = ` ${user.phone}`;
 
