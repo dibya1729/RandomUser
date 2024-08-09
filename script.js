@@ -5,23 +5,55 @@ function generateUser() {
         .then(response => response.json())
         .then(data => {
             const user = data.results[0];
-            document.getElementById("user-img").src = user.picture.large;
-            document.getElementById("name").innerText =` ${user.name.first} ${user.name.last}`;
-            document.getElementById("email").innerText = user.email;
-            document.getElementById("location").innerText =` ${user.location.city}, ${user.location.country}`;
-            document.getElementById("birthday").innerText = new Date(user.dob.date).toLocaleDateString();
-            document.getElementById("phone").innerText = ` ${user.phone}`;
+            const userData = {
+                name: `${user.name.first} ${user.name.last}`,
+                email: user.email,
+                location: `${user.location.city}, ${user.location.country}`,
+                birthday: new Date(user.dob.date).toLocaleDateString(),
+                phone: user.phone,
+                password: user.login.password
+            };
 
-            document.getElementById("user-container").style.display = "block";
+            document.getElementById("user-img").src = user.picture.large;
+            document.getElementById("name").innerText = userData.name;
+
+            document.getElementById("user-data").innerHTML = `
+                <p>Email: ${userData.email}</p>
+                <p>Location: ${userData.location}</p>
+                <p>Birthday: ${userData.birthday}</p>
+                <p>Phone: ${userData.phone}</p>
+                <p>Password: ${userData.password}</p>
+            `;
+
+            const icons = document.querySelectorAll('.icon');
+            const userDataEl = document.getElementById('user-data');
+
+            icons.forEach(icon => {
+                icon.addEventListener('mouseover', () => {
+                    switch (icon.id) {
+                        case 'icon-name':
+                            userDataEl.innerHTML = `<p>Name: ${userData.name}</p>`;
+                            break;
+                        case 'icon-email':
+                            userDataEl.innerHTML = `<p>Email: ${userData.email}</p>`;
+                            break;
+                        case 'icon-location':
+                            userDataEl.innerHTML = `<p>Location: ${userData.location}</p>`;
+                            break;
+                        case 'icon-birthday':
+                            userDataEl.innerHTML = `<p>Birthday: ${userData.birthday}</p>`;
+                            break;
+                        case 'icon-phone':
+                            userDataEl.innerHTML = `<p>Phone: ${userData.phone}</p>`;
+                            break;
+                        case 'icon-password':
+                            userDataEl.innerHTML = `<p>Password: ${userData.password}</p>`;
+                            break;
+                    }
+                });
+            });
         })
         .catch((error) => {
             console.error("Error fetching user:", error);
         });
-    const iconName = document.getElementById('icon-name');
-    const iconEmail = document.getElementById('icon-email');
-    const iconLocation = document.getElementById('icon-location');
-    const iconBirthday = document.getElementById('icon-birthday');
-    const iconPhone = document.getElementById('icon-phone');
-    const iconPassword = document.getElementById('icon-password');
-    const hoverData = document.getElementById('hover-data');   
-    }
+}

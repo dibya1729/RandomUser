@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 <body>
     <header>
         <div class="navbar">
@@ -26,44 +28,35 @@
             <p style="font-size: 20px;">A free, <a href="#">open-source</a> API for generating random user data. Like Lorem Ipsum, but for people.<br></p>
             <img src="twitter (1).png">Follow us @randommapi
             <div class="user-profile">
-
-
-            <div class="container-user">
-                <hr>
-                    <div id="user-container" style="display: none;">
+                <div class="container-user">
+                    <hr>
+                    <div id="user-container">
                         <img id="user-img" alt="User Image">
                         <p id="user-name"><span id="name"></span></p>
-                        <p id="user-email"><span id="email"></span></p>
-                        <p id="user-location"><span id="location"></span></p>
-                        <p id="user-birthday"><span id="birthday"></span></p>
-                        <p id="user-phone"><span id="phone"></span></p>
-                        <p id="user-password"><span id="password"></span></p>
+                        <p id="user-data"></p>
                     </div>
-                    
-
-                <div class="icons">
-                    <span class="icon">&#128100;</span>
-                    <span class="icon">&#128231;</span>
-                    <span class="icon">&#128197;</span>
-                    <span class="icon">&#128248;</span>
-                    <span class="icon">&#128222;</span> 
-                    <span class="icon">&#128274;</span>
+                    <div class="icons">
+                        <span class="icon" id="icon-name">&#128100;</span>
+                        <span class="icon" id="icon-email">&#128231;</span>
+                        <span class="icon" id="icon-birthday">&#128197;</span>
+                        <span class="icon" id="icon-phone">&#128222;</span>
+                        <span class="icon" id="icon-location">&#128248;</span>
+                        <span class="icon" id="icon-password">&#128274;</span>
+                    </div>
                 </div>
             </div>
+            <div class="container">
+                <p class="sponser">
+                    <p style="color: rgb(119, 119, 117); margin-top: -10px; font-size: 28px; font-family: Verdana;">Sponsored</p>
+                    <p style="font-family: Verdana; font-size: 32px; color: black; letter-spacing: 0.5px; font-weight: lighter; margin-top: -5px;">Random API</p>
+                    <p style="color: rgb(82, 80, 80); font-size: 23px; margin-top: -4px;">Want to create your own <b>customized</b> generator for your application?
+                        Check out our other service RandomAPI!</p>
+                    <button id="learn-more-btn">&nbsp; Learn More &nbsp;</button>
+                </p>
+            </div>
         </div>
-        <footer class="container">
-            <p p class="sponser">
-                <p style="color: rgb(119, 119, 117); font-size: 28px; font-family: Verdana;">Sponsored</p>
-            <p style="font-family: Verdana; font-size: 32px; color: black; letter-spacing: 0.5px; font-weight: lighter; margin-top: -5px;">Random API</p>
-            <p style="color: rgb(82, 80, 80); font-size: 23px; margin-top: -4px;">Want to create your own <b>customized</b> generator for your application?
-                 Check out our other service RandomAPI!</br></h2>
-            <button id="learn-more-btn">&nbsp; Learn More &nbsp;</button>
-            </p>
-        </footer>
-       </div>
     </main>
-</body>
-<body>
     <script src="script.js"></script>
 </body>
+
 </html>
