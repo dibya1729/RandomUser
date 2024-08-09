@@ -17,13 +17,8 @@ function generateUser() {
             document.getElementById("user-img").src = user.picture.large;
             document.getElementById("name").innerText = userData.name;
 
-            document.getElementById("user-data").innerHTML = `
-                <p>Email: ${userData.email}</p>
-                <p>Location: ${userData.location}</p>
-                <p>Birthday: ${userData.birthday}</p>
-                <p>Phone: ${userData.phone}</p>
-                <p>Password: ${userData.password}</p>
-            `;
+            // Initially show only the user's name
+            document.getElementById("user-data").innerHTML = `<p>Name: ${userData.name}</p>`;
 
             const icons = document.querySelectorAll('.icon');
             const userDataEl = document.getElementById('user-data');
